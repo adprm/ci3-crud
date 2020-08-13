@@ -46,11 +46,11 @@ class Student_model extends CI_Model {
     }
 
     private function _uploadImage() {
-        $config['allowed_types']    = 'jpg|jpeg|png';
-        $config['max_size']         = '6000';
         $config['upload_path']      = './upload/';
+        $config['allowed_types']    = 'jpg|jpeg|png';
         $config['file_name']        = $this->id;
         $config['overwrite']        = true;
+        $config['max_size']         = '10000';
 
         $this->load->library('upload', $config);
 
@@ -61,5 +61,12 @@ class Student_model extends CI_Model {
         return 'default.jpg';
     }
 
-    
+    private function _deleteImage($id) {
+        $student = $this->getByid($id);
+
+        if ($student->image != 'default.jpg') {
+            $file_name = explode(".", $student->image)[0];
+            return array_map('unlink', glob(FCPATH. "upload/$file_name.*"));
+        }
+    }
 }
