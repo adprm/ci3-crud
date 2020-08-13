@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Students extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+
+        $this->load->model('student_model');
+    }
+
     public function index() {
         $data['title'] = "Students";
 
@@ -12,5 +18,7 @@ class Students extends CI_Controller {
         $this->load->view('student/index', $data);
         $this->load->view('templates/footer');
     }
+
+
 
 }
