@@ -23,6 +23,8 @@ class Students extends CI_Controller {
     public function add() {
         $data['title'] = "Add Student";
 
+        $stundent = $this->student_model;
+
         $validation = $this->form_validation->set_rules('name', 'Name', 'required');
         $validation = $this->form_validation->set_rules('nim', 'Nim', 'required|min_length[8]');
         $validation = $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
@@ -33,8 +35,14 @@ class Students extends CI_Controller {
             $this->load->view('templates/sidebar');
             $this->load->view('student/add_data', $data);
             $this->load->view('templates/footer');
+            $this->session->set_flashdata('message_error_addstudent', '<div class="alert alert-danger" role="alert">
+            New students dont added!</div>');
+        } else {
+            $stundent->save();
+            $this->session->set_flashdata('message_success_addstudent', '<div class="alert alert-success" role="alert">
+            New student added!</div>');
+            redirect('students');
         }
     }
-
 
 }
