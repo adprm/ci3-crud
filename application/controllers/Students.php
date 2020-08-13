@@ -46,7 +46,7 @@ class Students extends CI_Controller {
     }
 
     public function edit($id = null) {
-        
+        $data['title'] = "Edit Data Student";
     }
 
 }
