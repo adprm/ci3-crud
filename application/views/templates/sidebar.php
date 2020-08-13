@@ -15,9 +15,9 @@
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>" href="<?= site_url('students'); ?>">Students</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Add Student</a>
+                        <nav class="sb-sidenav-menu-nested nav <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
+                            <a class="nav-link" href="<?= site_url('students'); ?>">Students</a>
+                            <a class="nav-link" href="<?= site_url('students/add'); ?>">Add Student</a>
                         </nav>
                     </div>
                 </div>
