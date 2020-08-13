@@ -5,7 +5,7 @@ class Overview extends CI_Controller {
 
     public function index() {
         $data['title'] = "CI-CRUD";
-        $this->load->view('admin/overview');
+        $this->load->view('admin/overview', $data);
     }
 
 }
