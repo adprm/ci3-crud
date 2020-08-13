@@ -1,11 +1,15 @@
 <footer class="py-4 bg-light mt-auto">
     <div class="container-fluid">
         <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Your Website 2020</div>
+            <div class="text-muted">Copyright &copy; ADPRM <?= date('Y'); ?></div>
             <div>
-                <a href="#">Privacy Policy</a>
+                <a href="#"><i class="fab fa-github"></i> Github </a>
                 &middot;
-                <a href="#">Terms &amp; Conditions</a>
+                <a href="#"><i class="fab fa-facebook"></i> Facebook </a>
+                &middot;
+                <a href="#"><i class="fab fa-instagram"></i> Instagram </a>
+                &middot;
+                <a href="#"><i class="fab fa-linkedin"></i> Linkedin </a>
             </div>
         </div>
     </div>
