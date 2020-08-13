@@ -16,8 +16,8 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
-                            <a class="nav-link" href="<?= site_url('students'); ?>">Students</a>
-                            <a class="nav-link" href="<?= site_url('students/add'); ?>">Add Student</a>
+                            <a class="nav-link" href="<?= site_url('students'); ?>">List Students</a>
+                            <a class="nav-link" href="<?= site_url('students/add'); ?>">Add Studend</a>
                         </nav>
                     </div>
                 </div>
