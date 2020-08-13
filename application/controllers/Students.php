@@ -23,11 +23,13 @@ class Students extends CI_Controller {
     public function add() {
         $data['title'] = "Add Student";
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('templates/sidebar');
-        $this->load->view('student/add_data', $data);
-        $this->load->view('templates/footer');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('student/add_data', $data);
+            $this->load->view('templates/footer');
+        }
     }
 
 
