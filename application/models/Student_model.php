@@ -18,4 +18,14 @@ class Student_model extends CI_Model {
     public function getById($id) {
         return $this->db->get_where($this->_table, ['id' => $id])->row();
     }
+
+    public function save() {
+        $post = $this->input->post();
+        $this->name = $post['name'];
+        $this->nim = $post['nim'];
+        $this->email = $post['email'];
+        $this->image = $this->_uploadImage();
+
+        return $this->db->insert($this->_table, $this);
+    }
 }
