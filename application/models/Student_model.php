@@ -9,5 +9,9 @@ class Student_model extends CI_Model {
     public $nim;
     public $email;
     public $image;
-    
+
+
+    public function getAll() {
+        $this->db->get->($this->_table)->result();
+    }
 }
