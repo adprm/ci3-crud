@@ -15,28 +15,22 @@
                         <div class="form-group">
                             <label for="name">Name*</label>
                             <input class="form-control"
-                            type="text" name="name" placeholder="Enter your name" />
-                            <div class="invalid-feedback">
-                                <?php echo form_error('name') ?>
-                            </div>
+                            type="text" name="name" placeholder="Enter your name" value="<?= set_value('name'); ?>">
+                            <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <!-- input nim -->
                         <div class="form-group">
                             <label for="nim">NIM*</label>
                             <input class="form-control"
-                            type="number" name="nim" min="0" placeholder="Enter your NIM" />
-                            <div class="invalid-feedback">
-                                <?php echo form_error('nim') ?>
-                            </div>
+                            type="number" name="nim" min="0" placeholder="Enter your NIM" value="<?= set_value('nim'); ?>">
+                            <?= form_error('nim', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <!-- input email -->
                         <div class="form-group">
                             <label for="email">Email*</label>
-                            <input class="form-control"
-                            type="text" name="email" min="0" placeholder="Enter your email" />
-                            <div class="invalid-feedback">
-                                <?php echo form_error('email') ?>
-                            </div>
+                            <input class="form-control" type="text" name="email" min="0" placeholder="Enter your email"
+                            value="<?= set_value('email'); ?>">
+                            <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <!-- input image -->
                         <div class="form-group">

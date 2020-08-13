@@ -23,6 +23,10 @@ class Students extends CI_Controller {
     public function add() {
         $data['title'] = "Add Student";
 
+        $validation = $this->form_validation->set_rules('name', 'Name', 'required');
+        $validation = $this->form_validation->set_rules('nim', 'Nim', 'required|min_length[8]');
+        $validation = $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/topbar', $data);
