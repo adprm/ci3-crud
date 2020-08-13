@@ -69,4 +69,9 @@ class Student_model extends CI_Model {
             return array_map('unlink', glob(FCPATH. "upload/$file_name.*"));
         }
     }
+
+    public function delete($id) {
+        $this->_deleteImage($id);
+        return $this->db->delete($this->_table, array('id' => $id));
+    }
 }
