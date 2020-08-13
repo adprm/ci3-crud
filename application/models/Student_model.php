@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Student_model extends CI_Model {
-    private $_table = 'mahasiswa';
+    private $_table = 'student';
 
     public $id;
     public $name;
