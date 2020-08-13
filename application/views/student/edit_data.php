@@ -46,6 +46,8 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- button save -->
+                        <input class="btn btn-success" type="submit" name="btn" value="Edit" />
                     </form>
                 </div>
 
