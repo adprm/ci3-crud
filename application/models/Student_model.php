@@ -21,6 +21,7 @@ class Student_model extends CI_Model {
 
     public function save() {
         $post = $this->input->post();
+        $this->id = uniqid();
         $this->name = $post['name'];
         $this->nim = $post['nim'];
         $this->email = $post['email'];
