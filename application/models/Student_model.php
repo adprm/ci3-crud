@@ -8,7 +8,7 @@ class Student_model extends CI_Model {
     public $name;
     public $nim;
     public $email;
-    public $image;
+    public $image = 'default.jpg';
 
 
     public function getAll() {
@@ -44,4 +44,22 @@ class Student_model extends CI_Model {
 
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
     }
+
+    private function _uploadImage() {
+        $config['allowed_types']    = 'jpg|jpeg|png';
+        $config['max_size']         = '6000';
+        $config['upload_path']      = './upload/';
+        $config['file_name']        = $this->id;
+        $config['overwrite']        = true;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('image')) {
+            return $this->upload->data('file_name');
+        }
+
+        return 'default.jpg';
+    }
+
+    
 }
