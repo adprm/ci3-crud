@@ -10,7 +10,7 @@ class Students extends CI_Controller {
     }
 
     public function index() {
-        $data['title'] = "Students";
+        $data['title'] = "List Students";
         $data['student'] = $this->student_model->getAll();
 
         $this->load->view('templates/header', $data);
@@ -21,7 +21,7 @@ class Students extends CI_Controller {
     }
 
     public function add() {
-        $data['title'] = "Add New Data";
+        $data['title'] = "Add Student";
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
