@@ -3,6 +3,12 @@
         <div class="container-fluid">
             <h1 class="mt-4"><?= $title; ?></h1>
 
+            <div class="col-lg-4">
+                <!-- alert error add -->
+                <?= $this->session->flashdata('message_error_addstudent'); ?>
+                <!-- alert success add -->
+                <?= $this->session->flashdata('message_success_addstudent'); ?>
+            </div>  
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table mr-1"></i>
