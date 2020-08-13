@@ -36,7 +36,7 @@ class Students extends CI_Controller {
             $this->load->view('student/add_data', $data);
             $this->load->view('templates/footer');
             $this->session->set_flashdata('message_error_addstudent', '<div class="alert alert-danger" role="alert">
-            New students dont added!</div>');
+            New student dont added!</div>');
         } else {
             $stundent->save();
             $this->session->set_flashdata('message_success_addstudent', '<div class="alert alert-success" role="alert">
