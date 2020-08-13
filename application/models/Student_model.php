@@ -28,4 +28,20 @@ class Student_model extends CI_Model {
 
         return $this->db->insert($this->_table, $this);
     }
+
+    public function update() {
+        $post = $this->input->post();
+        $this->id = $post['id'];
+        $this->name = $post['name'];
+        $this->nim = $post['nim'];
+        $this->email = $post['email'];
+
+        if (!empty($_FILES['image']['name'])) {
+            $this->image = $this->_uploadImage();
+        } else {
+            $this->image = $post['old_image'];
+        }
+
+        return $this->db->update($this->_table, $this, array('id' => $post['id']));
+    }
 }
