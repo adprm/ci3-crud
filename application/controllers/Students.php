@@ -11,6 +11,7 @@ class Students extends CI_Controller {
 
     public function index() {
         $data['title'] = "Students";
+        $data['student'] = $this->student_model->getAll();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
@@ -19,6 +20,15 @@ class Students extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    public function add() {
+        $data['title'] = "Add New Data";
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('student/add_data', $data);
+        $this->load->view('templates/footer');
+    }
 
 
 }
