@@ -10,39 +10,42 @@
                 </div>
 
                 <div class="card-body">
-                	<form action="<?php echo site_url('students/edit') ?>" method="post" enctype="multipart/form-data" >
-                        <!-- input name -->
+                    <?= form_open_multipart('students/edit/'); ?>
+                        <input type="hidden" name="about_id" value="<?php echo $student->id?>" />
+                        <!-- edit name -->
                         <div class="form-group">
                             <label for="name">Name*</label>
-                            <input class="form-control"
-                            type="text" name="name" placeholder="Enter your name" value="<?= set_value('name'); ?>">
+                            <input type="text" class="form-control" name="name" value="<?= $student->name; ?>">
                             <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                        <!-- input nim -->
                         <div class="form-group">
                             <label for="nim">NIM*</label>
-                            <input class="form-control"
-                            type="number" name="nim" min="0" placeholder="Enter your NIM" value="<?= set_value('nim'); ?>">
+                            <input type="number" class="form-control" name="nim" value="<?= $student->nim; ?>">
                             <?= form_error('nim', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                        <!-- input email -->
                         <div class="form-group">
                             <label for="email">Email*</label>
-                            <input class="form-control" type="text" name="email" min="0" placeholder="Enter your email"
-                            value="<?= set_value('email'); ?>">
+                            <input type="number" class="form-control" name="email" value="<?= $student->email; ?>">
                             <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                        <!-- input image -->
-                        <div class="form-group">
-                        <label for="image">Photo</label>
-                            <input class="form-control-file"
-                            type="file" name="image" />
-                            <div class="invalid-feedback">
-                                <?php echo form_error('image') ?>
+                        <div class="form-group row">
+                            <div class="col-sm-2">
+                                Picture
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <img src="<?= base_url('upload/') . $student->image; ?>" class="img-thumbnail">
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="image" name="image">
+                                            <label class="custom-file-label" for="image">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- button save -->
-                        <input class="btn btn-success" type="submit" name="btn" value="Save" />
                     </form>
                 </div>
 
