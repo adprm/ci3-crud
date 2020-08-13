@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Overview extends CI_Controller {
 
     public function index() {
-        $data['title'] = "CI-CRUD";
+        $data['title'] = "Dashboard";
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
