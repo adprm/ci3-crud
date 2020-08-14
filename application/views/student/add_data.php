@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <!-- button save -->
-                        <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                        <input class="btn btn-success" type="submit" name="btn" value="Add" />
                     </form>
                 </div>
 
