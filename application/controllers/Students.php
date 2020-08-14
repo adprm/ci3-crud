@@ -45,6 +45,8 @@ class Students extends CI_Controller {
     }
 
     public function edit($id = null) {
+        $data['title'] = "Edit Data Student";
+        
         if (!isset($id)) redirect('students');
 
         $student = $this->student_model;
