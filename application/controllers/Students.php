@@ -78,7 +78,13 @@ class Students extends CI_Controller {
     }
 
     public function delete($id = null) {
+        if (!isset($id)) show_404();
 
+        $student = $this->student_model;
+
+        if ($student->delete($id)) {
+            redirect('students');
+        }
     }
 
 }
