@@ -4,7 +4,7 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Core</div>
-                    <a class="nav-link <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>" href="<?= site_url('overview'); ?>">
+                    <a class="nav-link <?php echo $this->uri->segment(1) == '' ? 'active': '' ?>" href="<?= site_url('overview'); ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
