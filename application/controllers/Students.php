@@ -52,11 +52,17 @@ class Students extends CI_Controller {
         $data['student'] = $student->getById($id);
         if (!$data['student']) show_404();
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('templates/sidebar');
-        $this->load->view('student/edit_data', $data);
-        $this->load->view('templates/footer');
+        $validation = $this->form_validation->set_rules('name', 'Name', 'required');
+        $validation = $this->form_validation->set_rules('nim', 'Nim', 'required|min_length[8]');
+        $validation = $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('student/edit_data', $data);
+            $this->load->view('templates/footer');
+        }
     }
 
 }
