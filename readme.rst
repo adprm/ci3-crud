@@ -1,7 +1,7 @@
 ###################
 Codeigniter CRUD
 ###################
-Create, read, update, delete with Codeigniter.
+Create, read, update, delete with Codeigniter and with MySQL DBMS
 
 *******************
 How to use
