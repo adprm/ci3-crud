@@ -2,10 +2,6 @@
     <main>
         <div class="container-fluid">
             <h1 class="mt-4"><?= $title; ?></h1>
-            <div class="col-lg-4">
-                <!-- alert error edit -->
-                <?= $this->session->flashdata('message_error_editdata'); ?>
-            </div>
 
             <div class="card mb-3">
                 <!-- ikon kembali -->
@@ -14,7 +10,8 @@
                 </div>
 
                 <div class="card-body">
-                    <?= form_open_multipart('students/edit'); ?>
+                    <?= $this->session->flashdata('message'); ?>
+                    <form action="" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= $student->id; ?>" />
                         <!-- edit name -->
                         <div class="form-group">
