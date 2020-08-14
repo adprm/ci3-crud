@@ -9,7 +9,7 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table mr-1"></i>
-                    DataTable Students
+                    <a href="<?php echo site_url('students/add/') ?>"><i class="fas fa-plus"></i> Add New Student</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
