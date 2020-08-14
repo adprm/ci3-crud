@@ -4,10 +4,7 @@
             <h1 class="mt-4"><?= $title; ?></h1>
 
             <div class="col-lg-4">
-                <!-- alert error add -->
-                <?= $this->session->flashdata('message_error_addstudent'); ?>
-                <!-- alert success add -->
-                <?= $this->session->flashdata('message_success_addstudent'); ?>
+                <?= $this->session->flashdata('message'); ?>
             </div>  
             <div class="card mb-4">
                 <div class="card-header">
@@ -39,7 +36,7 @@
                                         <img src="<?php echo base_url('upload/'.$s->image) ?>" width="64" />
                                     </td>
                                     <td>
-                                        <a href="<?= site_url('students/edit/' . $s->id); ?>" class="btn btn-small text-success"><i class="fas fa-edit"></i> Edit</a>
+                                        <a href="<?= site_url('students/edit/'.$s->id); ?>" class="btn btn-small text-success"><i class="fas fa-edit"></i> Edit</a>
 										<a href="#" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Delete</a>
                                     </td>
                                 </tr>
