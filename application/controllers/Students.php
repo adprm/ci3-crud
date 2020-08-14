@@ -48,6 +48,10 @@ class Students extends CI_Controller {
         if (!isset($id)) redirect('students');
 
         $student = $this->student_model;
+
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('nim', 'Nim', 'required|min_length[8]');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
     }
 
 }
