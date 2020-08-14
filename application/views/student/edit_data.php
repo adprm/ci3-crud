@@ -2,6 +2,10 @@
     <main>
         <div class="container-fluid">
             <h1 class="mt-4"><?= $title; ?></h1>
+            <div class="col-lg-4">
+                <!-- alert error edit -->
+                <?= $this->session->flashdata('message_error_editdata'); ?>
+            </div>
 
             <div class="card mb-3">
                 <!-- ikon kembali -->
@@ -10,12 +14,12 @@
                 </div>
 
                 <div class="card-body">
-                    <?= form_open_multipart('students/edit/'); ?>
-                        <input type="hidden" name="about_id" value="<?php echo $student->id?>" />
+                    <?= form_open_multipart('students/edit'); ?>
+                        <input type="hidden" name="id" value="<?= $student->id; ?>" />
                         <!-- edit name -->
                         <div class="form-group">
                             <label for="name">Name*</label>
-                            <input type="text" class="form-control" name="name" value="<?= $student->name; ?>">
+                            <input type="text" class="form-control" id="name" name="name" value="<?= $student->name; ?>">
                             <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
@@ -25,25 +29,16 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email*</label>
-                            <input type="number" class="form-control" name="email" value="<?= $student->email; ?>">
+                            <input type="text" class="form-control" name="email" value="<?= $student->email; ?>">
                             <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-2">
-                                Picture
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <img src="<?= base_url('upload/') . $student->image; ?>" class="img-thumbnail">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="image" name="image">
-                                            <label class="custom-file-label" for="image">Choose file</label>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="form-group">
+                            <label for="image">Photo</label>
+                            <input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
+                             type="file" name="image" />
+                            <input type="hidden" name="old_image" value="<?php echo $student->image ?>" />
+                            <div class="invalid-feedback">
+                            	<?php echo form_error('image') ?>
                             </div>
                         </div>
                         <!-- button save -->
