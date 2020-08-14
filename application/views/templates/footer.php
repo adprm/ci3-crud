@@ -3,13 +3,13 @@
         <div class="d-flex align-items-center justify-content-between small">
             <div class="text-muted">Copyright &copy; ADPRM <?= date('Y'); ?></div>
             <div>
-                <a href="#"><i class="fab fa-github"></i> Github </a>
+                <a href="https://github.com/adprm"><i class="fab fa-github"></i> Github </a>
                 &middot;
-                <a href="#"><i class="fab fa-facebook"></i> Facebook </a>
+                <a href="https://web.facebook.com/aditiya.permanaa.3"><i class="fab fa-facebook"></i> Facebook </a>
                 &middot;
-                <a href="#"><i class="fab fa-instagram"></i> Instagram </a>
+                <a href="https://Instagram.com/aditiyapr_mn"><i class="fab fa-instagram"></i> Instagram </a>
                 &middot;
-                <a href="#"><i class="fab fa-linkedin"></i> Linkedin </a>
+                <a href="https://www.linkedin.com/in/aditiyaprmn/"><i class="fab fa-linkedin"></i> Linkedin </a>
             </div>
         </div>
     </div>
