@@ -5,7 +5,6 @@ class Students extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-
         $this->load->model('student_model');
     }
 
@@ -25,9 +24,9 @@ class Students extends CI_Controller {
 
         $student = $this->student_model;
 
-        $validation = $this->form_validation->set_rules('name', 'Name', 'required');
-        $validation = $this->form_validation->set_rules('nim', 'Nim', 'required|min_length[8]');
-        $validation = $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('nim', 'Nim', 'required|min_length[8]');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -46,19 +45,7 @@ class Students extends CI_Controller {
     }
 
     public function edit($id = null) {
-        if (!isset($id)) redirect('students');
-
-        $data['title'] = "Edit Data Student";
-        $student = $this->student_model;
         
-        $data['student'] = $student->getById($id);
-        if (!$data['student']) show_404();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('templates/sidebar');
-        $this->load->view('student/edit_data', $data);
-        $this->load->view('templates/footer');
     }
 
 }
