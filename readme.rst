@@ -1,4 +1,15 @@
 ###################
+Codeigniter CRUD
+###################
+Create, read, update, delete with Codeigniter.
+
+*******************
+How to use
+*******************
+- Create a new database with the name crud-ci3
+- Import crud-ci3.sql db into the database
+
+###################
 What is CodeIgniter
 ###################
 
