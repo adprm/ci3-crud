@@ -36,8 +36,10 @@
                                         <img src="<?php echo base_url('upload/'.$s->image) ?>" width="64" />
                                     </td>
                                     <td>
-                                        <a href="<?= site_url('students/edit/'.$s->id); ?>" class="btn btn-small text-success"><i class="fas fa-edit"></i> Edit</a>
-										<a href="#" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Delete</a>
+                                        <a href="<?= site_url('students/edit/'.$s->id); ?>" class="btn btn-small text-success">
+                                        <i class="fas fa-edit"></i> Edit</a>
+										<a href="#!" onclick="deleteConfirm('<?= site_url('students/delete'.$student->id); ?>')"
+                                        class="btn btn-small text-danger"><i class="fas fa-trash"></i> Delete</a>
                                     </td>
                                 </tr>
                                 <?= $i++; ?>
