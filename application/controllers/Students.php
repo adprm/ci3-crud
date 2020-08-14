@@ -77,4 +77,8 @@ class Students extends CI_Controller {
 
     }
 
+    public function delete($id = null) {
+
+    }
+
 }
