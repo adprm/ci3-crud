@@ -1,3 +1,11 @@
+<!-- function delete -->
+<script>
+function deleteConfirm(url){
+	$('#btn-delete').attr('href', url);
+	$('#deleteModal').modal();
+}
+</script>
+
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
@@ -38,7 +46,7 @@
                                     <td>
                                         <a href="<?= site_url('students/edit/'.$s->id); ?>" class="btn btn-small text-success">
                                         <i class="fas fa-edit"></i> Edit</a>
-										<a href="#!" onclick="deleteConfirm('<?= site_url('students/delete'.$student->id); ?>')"
+										<a href="#!" onclick="deleteConfirm('<?= site_url('students/delete/'.$s->id); ?>')"
                                         class="btn btn-small text-danger"><i class="fas fa-trash"></i> Delete</a>
                                     </td>
                                 </tr>
@@ -51,3 +59,23 @@
             </div>
         </div>
     </main>
+
+    <!-- modal -->
+<!-- modal delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Deleted data will not be restored.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
