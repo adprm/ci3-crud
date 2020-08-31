@@ -5,7 +5,7 @@ class Movies extends CI_Controller {
 
     public function index()
     {
-        $data['title'] = 'List Movies';
+        $data['title'] = 'Movie List';
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
