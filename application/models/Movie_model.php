@@ -19,12 +19,29 @@ Class Movie_model extends CI_Model {
     {
         $post = $this->input->post();
         $this->id = uniqid();
-        $this->title = $this->input->post('title');
-        $this->desc = $this->input->post('desc');
-        $this->release = $this->input->post('release');
+        $this->title = $post['title'];
+        $this->desc = $post['desc'];
+        $this->release = $post['release'];
         $this->poster = $this->_uploadImage();
 
         return $this->db->insert('movies', $this);
+    }
+
+    public function update()
+    {
+        $post = $this->input->post();
+        $this->id = $post['id'];
+        $this->title = $post['title'];
+        $this->desc = $post['desc'];
+        $this->release = $post['release'];
+
+        if (!empty($_FILES['poster']['name'])) {
+            $this->poster = $this->_uploadImage();
+        } else {
+            $this->poster = $post['old_image'];
+        }
+
+        return $this->db->update('movies', $this, ['id' => $post['id']]);
     }
 
     // method upload image
