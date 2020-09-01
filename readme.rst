@@ -1,4 +1,16 @@
 ###################
+CRUD CodeIgniter
+###################
+
+*******************
+How to use
+*******************
+
+- Create Database name `crud-ci3`
+- Import Database `crud-ci3.sql` to DBMS
+- Run the Application with url `http://localhost/crud-ci3/`
+
+###################
 What is CodeIgniter
 ###################
 
