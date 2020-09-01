@@ -95,4 +95,14 @@ class Movies extends CI_Controller {
         }
     }
 
+    public function delete($id = null)
+    {
+        if (!isset($id)) show_404();
+
+        $movies = $this->Movie_model;
+        if ($movies->delete($id)) {
+            redirect('movies');
+        }
+    }
+
 }
