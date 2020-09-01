@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
-    <div class="card mb-3">
+    <div class="card shadow border-left-primary mb-3">
         <div class="card-header">
         	<a href="<?php echo site_url('movies') ?>"><i class="fas fa-arrow-left"></i> Movie List</a>
         </div>
