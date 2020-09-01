@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Movies extends CI_Controller {
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Movie_model');
+    }
+
     // index
     public function index()
     {
