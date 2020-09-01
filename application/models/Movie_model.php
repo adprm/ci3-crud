@@ -81,4 +81,9 @@ Class Movie_model extends CI_Model {
         }
     }
 
+    // get data num rows
+    public function totalMovie() {
+        return $this->db->get('movies')->num_rows();
+    }
+
 }
