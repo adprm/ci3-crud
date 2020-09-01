@@ -31,11 +31,20 @@ class Movies extends CI_Controller {
         $this->form_validation->set_rules('desc', 'Description', 'required');
         $this->form_validation->set_rules('release', 'Release', 'required|date');
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar');
-        $this->load->view('templates/topbar');
-        $this->load->view('movie/add', $data);
-        $this->load->view('templates/footer');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar');
+            $this->load->view('movie/add', $data);
+            $this->load->view('templates/footer');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            New movie failed to added!</div>');
+        } else {
+            $movies->save();
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            New movie added!</div>');
+            redirect('movies');
+        }
     }
 
 }
