@@ -27,6 +27,10 @@ class Movies extends CI_Controller {
         $data['title'] = 'Add Movie';
         $movies = $this->Movie_model;
 
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('desc', 'Description', 'required');
+        $this->form_validation->set_rules('release', 'Release', 'required|date');
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
