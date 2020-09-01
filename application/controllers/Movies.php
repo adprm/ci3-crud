@@ -13,6 +13,7 @@ class Movies extends CI_Controller {
     public function index()
     {
         $data['title'] = 'Movie List';
+        $data['movies'] = $this->Movie_model->getAll();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
