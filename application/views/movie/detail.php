@@ -5,7 +5,7 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
     <div class="col-lg-6">
-        <div class="card shadow border-left-info mb-4">
+        <div class="card shadow border-bottom-info mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-info"><a href="<?php echo site_url('movies') ?>"><i class="fas fa-arrow-left"></i> Movie List</a></h6>
             </div>
