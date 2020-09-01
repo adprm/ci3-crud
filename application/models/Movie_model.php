@@ -44,6 +44,12 @@ Class Movie_model extends CI_Model {
         return $this->db->update('movies', $this, ['id' => $post['id']]);
     }
 
+    public function delete($id)
+    {
+        $this->_deleteImage($id);
+        return $this->db->delete('movies', ['id' => $id]);
+    }
+
     // method upload image
     private function _uploadImage()
     {
