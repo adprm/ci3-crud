@@ -61,4 +61,38 @@ class Movies extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    // edit
+    public function edit($id = null)
+    {
+        $data['title'] = "Edit Movie";
+        $movies = $this->Movie_model;
+        $data['movie'] = $movies->getById($id);
+
+        if (!isset($id)) redirect('movies');
+
+        
+        $data['movie'] = $movies->getById($id);
+        if (!$data['movie']) show_404();
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
+        $this->load->view('movie/edit', $data);
+        $this->load->view('templates/footer');
+        
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('desc', 'Description', 'required');
+        $this->form_validation->set_rules('release', 'Release', 'required|date');
+
+        if ($this->form_validation->run() == false) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Data failed to edit!</div>');
+        } else {
+            $movies->update();
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Data edited successfully!</div>');
+            redirect('movies');
+        }
+    }
+
 }
