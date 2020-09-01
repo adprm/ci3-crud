@@ -48,4 +48,17 @@ class Movies extends CI_Controller {
         }
     }
 
+    // detail
+    public function detail($id)
+    {
+        $data['title'] = 'Movie Detail';
+        $data['movie'] = $this->Movie_model->getById($id);
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
+        $this->load->view('movie/detail', $data);
+        $this->load->view('templates/footer');
+    }
+
 }
