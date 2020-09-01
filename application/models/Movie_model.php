@@ -27,6 +27,7 @@ Class Movie_model extends CI_Model {
         return $this->db->insert('movies', $this);
     }
 
+    // method update
     public function update()
     {
         $post = $this->input->post();
@@ -44,6 +45,7 @@ Class Movie_model extends CI_Model {
         return $this->db->update('movies', $this, ['id' => $post['id']]);
     }
 
+    // method delete
     public function delete($id)
     {
         $this->_deleteImage($id);
@@ -66,6 +68,17 @@ Class Movie_model extends CI_Model {
         }
 
         return "default.jpg";
+    }
+
+    // delete image
+    private function _deleteImage($id)
+    {
+        $movie = $this->getById($id);
+
+        if ($movie->poster != 'default.jpd') {
+            $file_name = explode(".", $movie->poster)[0];
+            return array_map('unlink', glob(FCPATH . "assets/img/$file_name.*"));
+        }
     }
 
 }
